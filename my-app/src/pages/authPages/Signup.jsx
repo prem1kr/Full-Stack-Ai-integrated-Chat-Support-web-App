@@ -18,7 +18,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try{
-       const res = await axios.post("http://localhost:5000/api/signup", formData);
+       const res = await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/signup", formData);
 		   navigate("/login");
 		}catch(error){
            alert(error.response?.data?.message || "Signup failed");
