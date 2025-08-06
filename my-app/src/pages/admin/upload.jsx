@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar/Navabar";
+import Navbar from "../../components/navbar/Navbar.jsx";
 
 const Upload = () => {
   const [bulkInput, setBulkInput] = useState("");

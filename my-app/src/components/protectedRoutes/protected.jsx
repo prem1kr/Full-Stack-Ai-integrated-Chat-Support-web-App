@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/protectedRoutes", {
+    axios.get("https://full-stack-ai-powered-chat-support.onrender.com/api/protectedRoutes", {
       withCredentials: true
     })
     .then((res) => {
