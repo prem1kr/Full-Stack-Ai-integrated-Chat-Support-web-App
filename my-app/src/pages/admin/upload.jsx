@@ -37,7 +37,7 @@ const Upload = () => {
     setIsSubmitting(true);
     try {
       for (const qa of parsedQA) {
-        await axios.post("http://localhost:5000/api/upload", qa);
+        await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/upload", qa);
       }
       alert("All questions submitted successfully");
       setParsedQA([]);

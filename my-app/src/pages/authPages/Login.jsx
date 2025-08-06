@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/login", formData, {
+      const res = await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/login", formData, {
         withCredentials: true,
       });
 

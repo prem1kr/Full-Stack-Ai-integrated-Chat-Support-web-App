@@ -16,7 +16,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
       if (!userId) return;
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/chat/${userId}`);
+        const res = await axios.get(`https://full-stack-ai-powered-chat-support.onrender.com/api/chat/${userId}`);
         if (res.data && res.data.messages) {
           setChatLog(res.data.messages);
           setConvoId(res.data._id);
@@ -58,7 +58,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/chat",
+        "https://full-stack-ai-powered-chat-support.onrender.com/api/chat",
         {
           message,
           userId,
@@ -85,7 +85,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
 
   const handleNewChat = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/chat/new", { userId });
+      const res = await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/chat/new", { userId });
       if (res.data._id) {
         setConvoId(res.data._id);
         setChatLog([]);
