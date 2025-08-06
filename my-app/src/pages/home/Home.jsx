@@ -35,7 +35,7 @@ const Home = () => {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/logout",
+        "https://full-stack-ai-powered-chat-support.onrender.com/api/logout",
         {},
         { withCredentials: true }
       );
