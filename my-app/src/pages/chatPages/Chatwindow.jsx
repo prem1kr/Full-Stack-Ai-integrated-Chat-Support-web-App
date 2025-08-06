@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/sidebar/sidebar.jsx";
 import Chat from "../../components/chat/chat.jsx";
-import Navbar from "../../components/Navbar/Navabar.jsx";
+import Navbar from "../../components/Navbar/Navbar.jsx";
 
 const ChatWindow = () => {
   const [userId, setUserId] = useState(null);
