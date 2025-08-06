@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT || 5000;
 app.use(cors({
-     origin: 'http://localhost:5173',
+     origin: 'http://localhost:5173', 'https://full-stack-ai-powered-chat-support-4c5z.onrender.com',
   credentials: true    
 }));
 
