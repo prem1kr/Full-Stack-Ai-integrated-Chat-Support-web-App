@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect( async  () => {
 
-    const res = await axios.get("http://localhost:5000/api/protectedRoutes", {
+    const res = await axios.get("https://ai-chat-app-backend-24sq.onrender.com/api/protectedRoutes", {
       withCredentials: true
     })
       .then((res) => {
