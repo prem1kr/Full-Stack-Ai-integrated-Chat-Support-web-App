@@ -15,7 +15,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/user");
+        const res = await axios.get("https://ai-chat-app-backend-24sq.onrender.com/api/admin/user");
         setUsers(res.data.users);
         setSelectedUserId(null);      
         setSelectedUserName("");
