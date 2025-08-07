@@ -10,7 +10,7 @@ const FAQ = () => {
   useEffect(() => {
     const handleFetchQuestion = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/uploads");
+        const res = await axios.get("https://ai-chat-app-backend-24sq.onrender.com/api/uploads");
         console.log(res.data.message || "Questions fetched successfully");
         setQuestions(res.data.data);
         setLoading(false);
