@@ -5,21 +5,22 @@ import axios from "axios";
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
-  useEffect(() => {
-    axios.get("https://full-stack-ai-powered-chat-support.onrender.com/api/protectedRoutes", {
+  useEffect( async  () => {
+
+    const res = await axios.get("http://localhost:5000/api/protectedRoutes", {
       withCredentials: true
     })
-    .then((res) => {
-      setIsAuthenticated(true);
-    })
-    .catch((err) => {
-      setIsAuthenticated(false);
-    });
+      .then((res) => {
+        setIsAuthenticated(true);
+      })
+      .catch((err) => {
+        setIsAuthenticated(false);
+      });
   }, []);
 
   if (isAuthenticated === null) return <p>Loading...</p>;
 
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

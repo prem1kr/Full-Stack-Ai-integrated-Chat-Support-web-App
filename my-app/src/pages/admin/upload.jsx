@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Navbar from "../../components/navbar/Navbar.jsx";
+import AdminNavbar from "../../components/admin/AdminNavbar.jsx";
 
 const Upload = () => {
   const [bulkInput, setBulkInput] = useState("");
@@ -37,7 +37,7 @@ const Upload = () => {
     setIsSubmitting(true);
     try {
       for (const qa of parsedQA) {
-        await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/upload", qa);
+        await axios.post("http://localhost:5000/api/upload", qa);
       }
       alert("All questions submitted successfully");
       setParsedQA([]);
@@ -52,7 +52,7 @@ const Upload = () => {
 
   return (
     <>
-      <Navbar />
+      <AdminNavbar />
       <div className="w-full min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-10 transition-colors">
         <h2 className="text-3xl font-bold text-center mb-10">Bulk Q&A Submission</h2>
 

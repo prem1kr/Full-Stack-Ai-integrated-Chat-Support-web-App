@@ -16,7 +16,7 @@ const Home = () => {
 
   const handleFetchQuestion = async () => {
     try {
-      const res = await axios.get("https://full-stack-ai-powered-chat-support.onrender.com/api/uploads");
+      const res = await axios.get("http://localhost:5000/api/uploads");
       console.log(res.data.message || "Question fetched successfully");
       setQuestions(res.data.data); 
     } catch (error) {
@@ -35,11 +35,11 @@ const Home = () => {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        "https://full-stack-ai-powered-chat-support.onrender.com/api/logout",
+        "http://localhost:5000/api/logout",
         {},
         { withCredentials: true }
       );
-      navigate("/login");
+      navigate("/");
       alert(res.data.message || "Logout successful");
     } catch (error) {
       console.error("Something went wrong", error);
@@ -62,9 +62,7 @@ const Home = () => {
               <option key={theme} value={theme}>{theme}</option>
             ))}
           </select>
-          <Link to="/upload">
-            <button className="btn btn-primary px-8 rounded-full  ">Upload FAQ</button>
-          </Link>
+         
           <button className="btn btn-outline btn-error" onClick={handleLogout}>
             Logout
           </button>

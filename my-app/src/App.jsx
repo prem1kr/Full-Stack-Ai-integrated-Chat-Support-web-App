@@ -8,6 +8,11 @@ import Home from './pages/home/Home.jsx';
 import ChatWindow from './pages/chatPages/Chatwindow.jsx';
 import ProtectedRoute from './components/protectedRoutes/protected.jsx';
 import Upload from './pages/admin/upload.jsx';
+import AdminLogin from './pages/admin/adminLogin.jsx';
+import AdminNavbar from './components/admin/AdminNavbar.jsx';
+import AdminDashboard from './pages/admin/adminDashboard.jsx';
+import FAQ from './pages/admin/FAQ.jsx';
+import AdminProtectedRoute from './components/admin/AdminRoutes.jsx';
 
 
 function App() {
@@ -29,11 +34,23 @@ function App() {
           } />
 
           <Route path='/upload' element={
-            <ProtectedRoute>
+            <AdminProtectedRoute>
               <Upload/>
-            </ProtectedRoute>
+            </AdminProtectedRoute>
             } />
 
+            <Route path='/adminlogin' element={<AdminLogin/>} />
+            <Route path='/adminnavbar' element={<AdminNavbar/>} />
+            <Route path='/admindashboard' element={
+              <AdminProtectedRoute>
+              <AdminDashboard/>
+              </AdminProtectedRoute>
+              } />
+            <Route path='/uploadfaq' element={
+              <AdminProtectedRoute>
+                <FAQ/>
+              </AdminProtectedRoute>
+              } /> 
       </Routes>
     </>
   );

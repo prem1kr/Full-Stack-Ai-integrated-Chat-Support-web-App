@@ -1,6 +1,6 @@
 import express from 'express';
 import { isLogedin } from '../controllers/protected.js';
-const protectedRoute = express();
+const protectedRoute = express.Router();
 
 
 protectedRoute.get("/protectedRoutes", isLogedin, (req, res) => {

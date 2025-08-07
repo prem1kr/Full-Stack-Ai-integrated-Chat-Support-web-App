@@ -16,7 +16,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
       if (!userId) return;
       setLoading(true);
       try {
-        const res = await axios.get(`https://full-stack-ai-powered-chat-support.onrender.com/api/chat/${userId}`);
+        const res = await axios.get(`http://localhost:5000/api/chat/${userId}`);
         if (res.data && res.data.messages) {
           setChatLog(res.data.messages);
           setConvoId(res.data._id);
@@ -58,7 +58,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
 
     try {
       const res = await axios.post(
-        "https://full-stack-ai-powered-chat-support.onrender.com/api/chat",
+        "http://localhost:5000/api/chat",
         {
           message,
           userId,
@@ -85,7 +85,7 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
 
   const handleNewChat = async () => {
     try {
-      const res = await axios.post("https://full-stack-ai-powered-chat-support.onrender.com/api/chat/new", { userId });
+      const res = await axios.post("http://localhost:5000/api/chat/new", { userId });
       if (res.data._id) {
         setConvoId(res.data._id);
         setChatLog([]);
@@ -133,17 +133,21 @@ const Chat = ({ userId, messages ,setMessages, triggerSidebarRefresh = [] }) => 
                 className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`rounded-2xl px-4 py-2 max-w-[80%] text-sm whitespace-pre-wrap ${
-                    msg.from === "user"
-                      ? "bg-primary text-primary-content"
-                      : "bg-base-300 text-base-content"
-                  }`}
-                >
-                  {msg.from === "bot" ? (
-                    <ReactMarkdown>{msg.text}</ReactMarkdown>
-                  ) : (
-                    msg.text
-                  )}
+               className={`rounded-2xl px-4 py-2 max-w-[80%] text-sm whitespace-pre-wrap break-words overflow-hidden ${
+               msg.from === "user"
+               ? "bg-primary text-primary-content"
+                   : "bg-base-300 text-base-content"
+              }`}
+                  >
+
+                {msg.from === "bot" ? (
+                <div className="break-words">
+                      <ReactMarkdown>{msg.text}</ReactMarkdown>
+                    </div>
+                    ) : (
+                   msg.text
+                     )}
+
                 </div>
               </div>
             ))}
