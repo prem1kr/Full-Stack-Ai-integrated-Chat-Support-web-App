@@ -159,12 +159,27 @@ SECRET_KEY=premkumar
 ## 🧪 Bonus Features
 
 * Agent typing indicator (`"Agent is typing..."`)
-* Download chat history as `.txt` or `.pdf`
-* Optional embedding-based similarity (e.g., via LangChain)
+
 
 ---
 
 ## 📸 Screenshots
+<img width="1902" height="883" alt="image" src="https://github.com/user-attachments/assets/353fe816-76f6-4229-aed9-d75fc5ae05d9" />
+<img width="1914" height="889" alt="image" src="https://github.com/user-attachments/assets/c3765644-05d4-4800-b485-0cdfe35cb07c" />
+<img width="1911" height="888" alt="image" src="https://github.com/user-attachments/assets/132cb23a-8741-435b-aee0-b28f74675956" />
+<img width="1890" height="874" alt="image" src="https://github.com/user-attachments/assets/078196fa-f585-42af-b490-a6e07b787e5d" />
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/c135b47d-0d9c-410e-85a0-760c656b46fc" />
+<img width="1878" height="888" alt="image" src="https://github.com/user-attachments/assets/2dc1663b-bd6e-47ce-b355-4fc06e635849" />
+<img width="1887" height="881" alt="image" src="https://github.com/user-attachments/assets/d3e04820-8f35-4d23-9743-49196980cb6f" />
+<img width="1894" height="874" alt="image" src="https://github.com/user-attachments/assets/8740bd0b-feb6-4fef-a02e-40fc0818dbd0" />
+<img width="1887" height="876" alt="image" src="https://github.com/user-attachments/assets/5caa3eca-419c-49ba-9ebb-878e0ad2e9a5" />
+
+
+
+
+
+
+
 
 
 
