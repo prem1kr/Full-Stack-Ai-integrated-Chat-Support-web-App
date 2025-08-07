@@ -16,7 +16,7 @@ const Sidebar = forwardRef(({ userId, setMessages }, ref) => {
   const fetchConversation = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/${userId}`, {
+      const res = await axios.get(`https://ai-chat-app-backend-24sq.onrender.com/api/chat/${userId}`, {
         withCredentials: true,
       });
 
@@ -45,7 +45,7 @@ const Sidebar = forwardRef(({ userId, setMessages }, ref) => {
     setChatLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/chat/${userId}`,
+        `https://ai-chat-app-backend-24sq.onrender.com/api/chat/${userId}`,
         { withCredentials: true }
       );
       const messages = res.data.messages || [];
