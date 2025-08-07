@@ -15,7 +15,7 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/isAdmin", {
+      const res = await axios.post("https://ai-chat-app-backend-24sq.onrender.com/api/admin/isAdmin", {
         email,
         password,
       });
