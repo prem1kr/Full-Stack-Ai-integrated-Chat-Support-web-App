@@ -1,9 +1,6 @@
 For Admin Login - Email - prek97344@gmail.com  Password - 123456
 # 🤖 AI Customer Support Chat Platform (MERN + Gemini API)
 
-A full-stack AI-powered customer support chat application built with the MERN stack, featuring Gemini API integration to simulate virtual assistant conversations and handle user queries using custom company FAQs or documents.
-
----
 
 ## 🚀 Tech Stack
 
