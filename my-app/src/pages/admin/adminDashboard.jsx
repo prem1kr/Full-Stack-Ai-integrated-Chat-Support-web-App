@@ -3,21 +3,23 @@ import axios from "axios";
 import Chat from "../../components/chat/chat.jsx";
 import AdminNavbar from "../../components/admin/AdminNavbar.jsx";
 import { useLocation } from "react-router-dom";
+import { FiUsers } from "react-icons/fi"; 
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedUserName, setSelectedUserName] = useState("");
   const [messages, setMessages] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false); 
 
-  const location = useLocation(); 
+  const location = useLocation();
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get("https://ai-chat-app-backend-24sq.onrender.com/api/admin/user");
         setUsers(res.data.users);
-        setSelectedUserId(null);      
+        setSelectedUserId(null);
         setSelectedUserName("");
         setMessages([]);
       } catch (err) {
@@ -26,20 +28,33 @@ const AdminDashboard = () => {
     };
 
     fetchUsers();
-  }, [location]); 
+  }, [location]);
 
   const handleUserSelect = (userId, name) => {
     setSelectedUserId(userId);
     setSelectedUserName(name);
     setMessages([]);
+    setSidebarOpen(false); 
   };
 
   return (
     <>
       <AdminNavbar />
-      <div className="flex h-screen overflow-hidden">
-        {/* Sidebar */}
-        <div className="w-1/4 bg-base-200 p-4 overflow-y-auto border-r border-base-300">
+      <div className="flex h-screen overflow-hidden relative">
+
+        <button
+          className="lg:hidden absolute top-4 left-4 z-50 bg-primary text-white p-2 rounded-full shadow-md"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
+          <FiUsers size={20} />
+        </button>
+
+
+        <div
+          className={`fixed lg:static top-0 left-0 h-full bg-base-200 p-4 border-r border-base-300 z-40 transition-transform transform ${
+            sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          } lg:translate-x-0 w-64 lg:w-1/4 overflow-y-auto`}
+        >
           <h2 className="text-2xl font-bold text-primary mb-4">Logged Users</h2>
           {users.map((user) => (
             <div
