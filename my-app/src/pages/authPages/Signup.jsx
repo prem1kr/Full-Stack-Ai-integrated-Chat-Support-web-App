@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const Signup = () => {
 	const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+
 	const [formData, setFormData] = useState({
       name: "",
 	  email: "",
@@ -17,12 +19,16 @@ const Signup = () => {
     
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+        setLoading(true);
 		try{
        const res = await axios.post("https://ai-chat-app-backend-24sq.onrender.com/api/signup", formData);
 		   navigate("/login");
+       alert("Signup successfully");
 		}catch(error){
            alert(error.response?.data?.message || "Signup failed");
-		}
+		} finally {
+      setLoading(false);
+    }
 	}
 
   return (
@@ -80,9 +86,14 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+              disabled={loading}
+              className={`w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              Sign Up
+              
+              {loading && (
+                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              )}
+              {loading ? 'Signing in...' : 'Signup'}
             </button>
 
             <p className="text-sm text-center mt-4 text-gray-600">
