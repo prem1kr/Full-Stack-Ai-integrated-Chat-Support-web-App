@@ -1,7 +1,6 @@
 For Admin Login - Email - prek97344@gmail.com  Password - 123456
 # 🤖 AI Customer Support Chat Platform (MERN + Gemini API)
-
-
+AI Customer Support Chat Platform is a modern, intelligent helpdesk solution built using the MERN stack and powered by Google’s Gemini API. It enables businesses to offer fast, accurate, and human-like responses to customer queries in real time. The platform features a clean, responsive chat interface where users can interact seamlessly across desktop and mobile devices. An integrated admin dashboard allows support teams to monitor active conversations, manage users, and fine-tune AI behavior. Conversations are stored securely in MongoDB, enabling analytics, history tracking, and follow-up actions. Built with Express.js and Node.js on the backend, it ensures high performance and scalability. JWT authentication keeps both customer and admin accounts secure.
 ## 🚀 Tech Stack
 
 - **Frontend**: React (with routing and component-based architecture)
